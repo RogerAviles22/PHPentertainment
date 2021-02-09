@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Diario de Películas</title>
     <link rel="stylesheet" href="colors.css">
@@ -33,6 +32,81 @@
             </div>
         </div>
     </nav>
+
+    <section>
+        <form class="container-fluid">
+            <div class="row">
+                <h3 class="col-12">General</h3>
+                <div class="form-general col-lg-8 p-1 d-flex">
+                    <label class="form-label" placeholder="Escriba el título del entretenimiento">Nombre:</label>
+                    <input type="text" class="form-control" id="text-nombre" required>
+                </div>
+
+                <div class="form-general col-lg-4 p-1">
+                    <label class="form-label">Año de estreno:</label>
+                    <input TYPE="NUMBER" MIN="1800" MAX="2021" STEP="1" VALUE="2019" SIZE="4" required>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="col-12">Tipo</h3>
+                <div class="form-tipo col-lg-4 d-flex">
+                    <label class="form-label">Categoría:</label>
+                    <select class="form-select" id="cbx-category" required>
+                        <option>Película</option>
+                        <option>Serie</option>
+                        <option>Novela</option>
+                    </select>
+                </div>
+                <div class="form-tipo col-lg-8">
+                    <label class="form-label">Género:</label>
+                    <div class="btn-group" role="group" aria-label="Checkbox-Genero">
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck1">Comedia</label>
+                      
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck2">Romance</label>
+                      
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck3">Suspenso</label>
+                        
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btncheck4">Acción</label>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="col-12">Visto el</h3>
+                <div class="col-6 d-flex">
+                    <label class="form-label">Fecha de visualización</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="form-general col-lg-6 d-flex">
+                    <label class="form-label">Url o Empresa:</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="" required>
+                    <datalist id="datalistOptions">
+                      <option value="Netflix">
+                      <option value="Claro TV">
+                      <option value="Univisa">
+                    </datalist>
+                </div>
+
+            </div>
+            <div class="row">
+                <h3 class="col-12">Califícalo</h3>
+                <div class="col-12 d-flex">
+                    <label class="form-label">Puntuación</label>
+                    <input TYPE="NUMBER" MIN="0" MAX="10" STEP="1" VALUE="0" SIZE="4" required>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-danger" type="submit">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+
+        </form>
+    </section>
 
 
 
