@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Diario de Películas</title>
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="description" content="Registro de películas o series observadas en el año.">
+    <meta name="keywords" content="Películas, Series, Novelas, Registro y Entretenimiento.">
+    <meta name="author" content="Roger Avilés">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="img-fluid" width="200">
+            </a>
+            <div class="d-flex" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="register.html">Registro</a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="container-fluid">
+        <form class="row justify-content-center align-items-center my-2">
+            <div class="col-auto">Filtrar por Año de visualización:</div>
+            <div class="col-auto">
+                <input TYPE="NUMBER" MIN="1800" MAX="2021" STEP="1" VALUE="2019" SIZE="4">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary"><i class="bi-search"></i></button>
+                
+            </div>
+        </form>
+    </section>
+
+    <section class="container-fluid">
+        <form class="row justify-content-center align-items-center my-2">
+            <div class="col-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="title-entertainment d-flex justify-content-center align-items-center">
+                            <div>
+                                <h4 class="text-wrap ">Titulo del Entretenimiento</h4>
+                                <sub>2015</sub>
+                            </div>
+                            <div class="btn-group-vertical mx-2" role="group">
+                                <button type="submit" class="btn btn-outline-info btn-description"><i class="bi-eye"></i></button>
+                                <button type="submit" class="btn btn-outline-danger btn-delete"><i class="bi-trash"></i></button>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="card-body"> 
+                        <p>Puntaje: 9.8</p> 
+                    </div>
+                    <div class="card-body"> 
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ab, error harum dolor, voluptate quia blanditiis magni delectus ipsum tenetur laudantium, quidem eos omnis reprehenderit recusandae labore quibusdam velit. Eveniet?</p>
+                           
+                    </div>
+                </div>
+               
+
+            </div>
+
+            <div class="col-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="title-entertainment d-flex text-wrap justify-content-center align-items-center">
+                            <div>
+                                <h4>Titulo del Entretenimiento</h4>
+                                <sub>2015</sub>
+                            </div>
+                            <div class="btn-group-vertical mx-2" role="group">
+                                <button type="submit" class="btn btn-outline-info btn-description"><i class="bi-eye"></i></button>
+                                <button type="submit" class="btn btn-outline-danger btn-delete"><i class="bi-trash"></i></button>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="card-body"> 
+                        <p>Puntaje: 9.8</p> 
+                    </div>
+                    <div class="card-body"> 
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ab, error harum dolor, voluptate quia blanditiis magni delectus ipsum tenetur laudantium, quidem eos omnis reprehenderit recusandae labore quibusdam velit. Eveniet?</p>
+                           
+                    </div>
+                </div>
+               
+
+            </div>
+        </form>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
