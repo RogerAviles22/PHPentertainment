@@ -12,6 +12,11 @@ class PagesController extends Controller
         return view('welcome', compact('entretenimientos'));
     }
 
+    public function detalle($id){
+        $entretenimientos = Models\Entretenimiento::findOrFail($id);
+        return view('entretenimiento.detalle', compact('entretenimientos'));
+    }
+
     public function registro(){
         return view('register');
     }

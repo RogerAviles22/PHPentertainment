@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genero extends Model
 {
+    protected $primaryKey = 'id_genero';
     use HasFactory;
 }

@@ -20,13 +20,13 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="title-entertainment d-flex justify-content-center align-items-center">
-                                <div >
+                                <div>
                                     <h4 class="text-wrap">{{$item->nombre}}</h4>
                                     <p class="fs-6">{{$item->anio_estreno}}</p>
                                 </div>
                                 <div class="btn-group-vertical mx-1" role="group">
-                                    <button type="submit" class="btn btn-outline-info btn-description"><i class="bi-eye"></i></button>
-                                    <button type="submit" class="btn btn-outline-danger btn-delete"><i class="bi-trash"></i></button>
+                                    <a href="{{ route('entretenimiento.detalle', $item) }}"><i class="bi-eye"></i></a>
+                                    <a ><i class="bi-trash"></i></a>
                                 </div>
                             </div>                    
                         </div>
