@@ -15,13 +15,35 @@
         </form>
 
         <div class="row justify-content-center align-items-center my-2 cards">
+            @foreach ($entretenimientos as $item)
+                <div class="col-lg-3 col-sm-6 p-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="title-entertainment d-flex justify-content-center align-items-center">
+                                <div >
+                                    <h4 class="text-wrap">{{$item->nombre}}</h4>
+                                    <p class="fs-6">{{$item->anio_estreno}}</p>
+                                </div>
+                                <div class="btn-group-vertical mx-1" role="group">
+                                    <button type="submit" class="btn btn-outline-info btn-description"><i class="bi-eye"></i></button>
+                                    <button type="submit" class="btn btn-outline-danger btn-delete"><i class="bi-trash"></i></button>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="card-body"> 
+                            <p class="fst-italic">Puntaje: 9.8</p>     
+                            <p class="text-wrap">{{$item->descripcion}}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
 
             <div class="col-lg-3 col-sm-6 p-1">
                 <div class="card">
                     <div class="card-header">
                         <div class="title-entertainment d-flex justify-content-center align-items-center">
                             <div >
-                                <h4 class="text-wrap">Titulo del Entretenimiento</h4>
+                                <h4 class="text-wrap">Plantilla</h4>
                                 <p class="fs-6">2016</p>
                             </div>
                             <div class="btn-group-vertical mx-1" role="group">
@@ -36,6 +58,8 @@
                     </div>
                 </div>
             </div>
+
+            
             
         </div>
     </section>

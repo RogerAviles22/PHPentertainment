@@ -25,12 +25,12 @@
                     <img src="{{ asset('images/logo.png') }} " alt="Logo" class="img-fluid" width="200">
                 </a>
                 <div class="d-flex" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Inicio</a>
+                            <a class="nav-link {{ Route::is('home') ? 'active' : '' }} " aria-current="page" href="{{ route('home') }}">Inicio</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('registro') }}">Registro</a>
+                            <a class="nav-link {{ Route::is('registro') ? 'active' : '' }}" href="{{ route('registro') }}">Registro</a>
                         </li>
                     </ul>
 
