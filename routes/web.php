@@ -17,4 +17,4 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/detalle/{id}', [PagesController::class, 'detalle'])->name('entretenimiento.detalle');
 
 Route::get('/register', [PagesController::class, 'registro'])->name('registro');
-Route::post('/register', [PagesController::class, 'registro'])->name('registro');
+Route::post('/register', [PagesController::class, 'crear'])->name('entretenimiento.crear');
