@@ -18,6 +18,7 @@ Route::get('/detalle/{id}', [PagesController::class, 'detalle'])->name('entreten
 
 Route::get('/editar/{id}', [PagesController::class, 'editar'])->name('entretenimiento.editar');
 Route::put('/editar/{id}', [PagesController::class, 'update'])->name('entretenimiento.update');
+Route::delete('/eliminar/{id}', [PagesController::class, 'eliminar'])->name('entretenimiento.eliminar');
 
 Route::get('/register', [PagesController::class, 'registro'])->name('registro');
 Route::post('/register', [PagesController::class, 'crear'])->name('entretenimiento.crear');

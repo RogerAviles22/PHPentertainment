@@ -115,5 +115,11 @@ class PagesController extends Controller
 
         return back()->with('mensaje', 'Entretenimiento editado!');
     }
+
+    public function eliminar($id){
+        $entretenimientosDelete = Models\Entretenimiento::findOrFail($id);
+        $entretenimientosDelete->delete(); 
+        return back();
+    }
     
 }

@@ -10,7 +10,6 @@
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary"><i class="bi-search"></i></button>
-                
             </div>
         </form>
 
@@ -27,7 +26,11 @@
                                 <div class="btn-group-vertical m-1" role="group">
                                     <a class="mb-1" href="{{ route('entretenimiento.detalle', $item) }}"><i class="bi-eye"></i></a>
                                     <a class="mb-1" href="{{ route('entretenimiento.editar', $item) }}"><i class="bi-pencil"></i></a>
-                                    <a class="" href=""><i class="bi-trash"></i></a>
+                                    <form action="{{ route('entretenimiento.eliminar', $item) }}"  method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="bi-trash"></i></button>
+                                    </form> 
                                 </div>
                             </div>                    
                         </div>
