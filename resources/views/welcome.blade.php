@@ -23,7 +23,7 @@
                                     <h4 class="text-wrap">{{$item->nombre}}</h4>
                                     <p class="fs-6">{{$item->anio_estreno}}</p>
                                 </div>
-                                <div class="btn-group-vertical m-1" role="group">
+                                <div class="btn-group-vertical m-1 align-items-center" role="group">
                                     <a class="mb-1" href="{{ route('entretenimiento.detalle', $item) }}"><i class="bi-eye"></i></a>
                                     <a class="mb-1" href="{{ route('entretenimiento.editar', $item) }}"><i class="bi-pencil"></i></a>
                                     <form action="{{ route('entretenimiento.eliminar', $item) }}"  method="POST">
@@ -39,8 +39,10 @@
                         </div>
                     </div>
                 </div>
-            @endforeach           
-            
+            @endforeach
         </div>
     </section>
+    <div class="pagination justify-content-center">
+        {{$entretenimientos -> links('pagination::bootstrap-4')}}
+    </div>
 @endsection

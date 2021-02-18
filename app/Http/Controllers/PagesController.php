@@ -9,7 +9,7 @@ use App\Models;
 class PagesController extends Controller
 {
     public function home(){
-        $entretenimientos = Models\Entretenimiento::all();
+        $entretenimientos = Models\Entretenimiento::paginate(4);
         return view('welcome', compact('entretenimientos'));
     }
 
