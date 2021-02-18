@@ -15,7 +15,25 @@ class PagesController extends Controller
 
     public function detalle($id){
         $entretenimientos = Models\Entretenimiento::findOrFail($id);
-        return view('entretenimiento.detalle', compact('entretenimientos'));
+
+        $categorias = $entretenimientos->id_categoria;
+        $categoria = Models\Categoria::find($categorias);
+
+        $historial = DB::table('historial__entretenimientos')
+                                ->where('id_entretenimiento', $id)
+                                ->get();
+
+        $generos = DB::table('entretenimientos')
+                                ->join('genero__entretenimientos', 'entretenimientos.id_entretenimiento', '=', 'genero__entretenimientos.id_entretenimiento')
+                                ->join('generos', 'generos.id_genero', '=', 'genero__entretenimientos.id_genero')
+                                ->select('generos.nombre')
+                                ->where('entretenimientos.id_entretenimiento', $id)
+                                ->get();              
+
+        return view('entretenimiento.detalle', compact('entretenimientos'
+                                                        ,'categoria'
+                                                        , 'historial'
+                                                        ,'generos'));
     }
 
     public function registro(){
@@ -69,6 +87,33 @@ class PagesController extends Controller
             );
             
         }
+    }
+
+    public function editar($id){
+        $entretenimientos = Models\Entretenimiento::findOrFail($id);
+
+        $historial = DB::table('historial__entretenimientos')
+                                ->where('id_entretenimiento', $id)
+                                ->get();
+
+        return view('entretenimiento.editar', compact('entretenimientos','historial'));
+    }
+
+    public function update(Request $request, $id){
+        $entretenimientosUpdate = Models\Entretenimiento::findOrFail($id);
+        $entretenimientosUpdate->nombre = $request->nombre;
+        $entretenimientosUpdate->descripcion = $request->descripcion;
+        $entretenimientosUpdate->anio_estreno = $request->anio_estreno;
+        $entretenimientosUpdate->save();
+
+        $historial_entretenimiento = DB::table('historial__entretenimientos')
+                                ->where('id_entretenimiento', $id)
+                                ->update(['fecha_visto' => $request->fecha_visto ,
+                                           'visto_en' =>  $request->visto_en,
+                                           'estrellas' =>  $request->estrellas]
+                                        );
+
+        return back()->with('mensaje', 'Entretenimiento editado!');
     }
     
 }

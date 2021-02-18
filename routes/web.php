@@ -16,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/detalle/{id}', [PagesController::class, 'detalle'])->name('entretenimiento.detalle');
 
+Route::get('/editar/{id}', [PagesController::class, 'editar'])->name('entretenimiento.editar');
+Route::put('/editar/{id}', [PagesController::class, 'update'])->name('entretenimiento.update');
+
 Route::get('/register', [PagesController::class, 'registro'])->name('registro');
 Route::post('/register', [PagesController::class, 'crear'])->name('entretenimiento.crear');

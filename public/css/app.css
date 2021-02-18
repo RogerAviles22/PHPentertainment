@@ -1,0 +1,27 @@
+/*https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff*/
+
+.card-header{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+a i{
+    color: #ffffff;
+    transition: color .5s;
+    padding: 1px 2px 1px 2px;
+}
+
+a i:hover{
+    color: #0dcaf0;
+}
+
+span{
+    background-color: #14213D;
+    color: #ffffff;
+    border: 1px solid #14213D  ;
+    border-radius: 5px;
+}
+
+div .detail{
+    background-color: aqua;
+}
