@@ -96,7 +96,7 @@
         </div>
         <div class="col-12 text-center">
             <button class="btn btn-danger" type="reset">Cancelar</button>
-            <button class="btn btn-primary" type="submit">Guardar</button>
+            <button class="btn btn-dark" type="submit">Guardar</button>
         </div>
 
     </form>

@@ -1,0 +1,21 @@
+.heading-footer 
+{ 
+background-image: url('images/claqueta.png'); 
+background-size: cover; 
+height: 175px; 
+-webkit-box-shadow: none; 
+box-shadow: none; 
+border: 0px; 
+border-radius: 0px; 
+}   
+
+span{
+    background-color: #14213D;
+    color: #ffffff;
+    border: 1px solid #14213D  ;
+    border-radius: 5px;
+}
+
+div.detail{
+    background-color: aqua;
+}

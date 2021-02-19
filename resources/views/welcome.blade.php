@@ -9,7 +9,7 @@
                 <input TYPE="NUMBER" MIN="1800" MAX="<?php echo date('Y'); ?>" STEP="1" VALUE="2019" SIZE="4">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary"><i class="bi-search"></i></button>
+                <button type="submit" class="btn btn-dark"><i class="bi-search"></i></button>
             </div>
         </form>
 

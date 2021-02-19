@@ -3,27 +3,50 @@
 <div class="modal-body detail">
     <div class="container">
         <div class="row">
-            <h1 class="text-center">{{$entretenimientos->nombre}} - {{$entretenimientos->anio_estreno}} </h1>  
-            <p>{{$entretenimientos->descripcion}}</p>  
-            <div class="col-lg-6 col-sm-12">
-                <h3>Categoría</h3>
-                <p class="text-center">{{$categoria->nombre}} </p>
-                <h3>Géneros</h3>
-                @foreach ($generos as $item)
-                    <span class="gender">{{$item->nombre}} </span>
-                @endforeach
-            </div>            
-            <div class="col-lg-6 col-sm-12">
-                <h2 class="text-center">Historial</h2>
-                <h3>Lo viste el</h3>
-                <p class="text-center">{{$historial[0]->fecha_visto}}</p>
-                <h3>Sitio</h3>
-                <p class="text-center">{{$historial[0]->visto_en}}</p>
-                <h3>Calificación personal</h3>
-                <p class="text-center">{{$historial[0]->estrellas}}</p>
+            <div class="card detail col-12">
+                <div class="card-header heading-footer"></div>
+                <div class="card-body card-detail row align-items-center">
+                    <div class="col-12 d-flex justify-content-between">
+                        <h3 class="text-start text-uppercase card-title">{{$entretenimientos->nombre}}</h3> 
+                        <p class="text-end card-title">Toma #000{{$entretenimientos->id_entretenimiento}}</p>
+                    </div>
+                    <hr>
+                    <p class="col-8 fs-4">{{$entretenimientos->descripcion}}</p>  
+                    <div class="col-4 text-center">                        
+                        <h4 >GÉNERO</h4>
+                        @foreach ($generos as $item)
+                            <p class="gender">{{$item->nombre}} </p>
+                        @endforeach
+                    </div>    
+                    <hr>
+                    <div class="col-5 d-flex justify-content-around align-items-center">
+                        <h4>AÑO</h4>
+                        <p class="fs-5">{{$entretenimientos->anio_estreno}}</p>
+                    </div>     
+                    <div class="col-7 d-flex justify-content-around ">
+                        <h4 class="align-items-center">CATEGORÍA</h4>
+                        <p class="fs-5 align-items-center">{{$categoria->nombre}} </p>
+                    </div>  
+                    <hr> 
+                    <div class="col-12 d-flex justify-content-evenly ">
+                        <h4 class="align-items-center">VISTO EL</h4>
+                        <p class="fs-5 align-items-center">{{$historial[0]->fecha_visto}}</p>                        
+                    </div>
+                    <hr>
+                    <div class="col-lg-6 col-md-12 d-flex justify-content-evenly align-items-center">
+                        <h4 class="mx-1 align-items-center">SITIO</h4>
+                        <p class="fs-6">{{$historial[0]->visto_en}}</p>
+                    </div>
+                    <div class="col-lg-6 col-md-12 d-flex justify-content-evenly align-items-center">
+                        <h4 class="align-items-center">CALIFICACIÓN PERSONAL</h4>
+                        <P class="fs-5">{{$historial[0]->estrellas}}</P>
+                    </div>
+                </div>
             </div>
-            @endsection
+
+            
         </div>
     </div>
 </div>
+@endsection
 
