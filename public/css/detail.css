@@ -1,21 +1,86 @@
-.heading-footer 
-{ 
-background-image: url('images/claqueta.png'); 
-background-size: cover; 
-height: 175px; 
--webkit-box-shadow: none; 
-box-shadow: none; 
-border: 0px; 
-border-radius: 0px; 
-}   
-
-span{
-    background-color: #14213D;
-    color: #ffffff;
-    border: 1px solid #14213D  ;
-    border-radius: 5px;
+/*https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff*/
+@font-face {
+    font-family: Tiza;
+    src: url('/fonts/tiza.ttf');
 }
 
-div.detail{
-    background-color: aqua;
+@font-face {
+    font-family: KgTen;
+    src: url('/fonts/KgTen.ttf');
+}
+.card-header{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+a i{
+    color: #ffffff;
+    transition: color .5s;
+    padding: 1px 2px 1px 2px;
+}
+
+a i:hover{
+    color: #0dcaf0;
+}
+
+/*Detalle*/
+.heading-footer { 
+    background-image: url("../images/claqueta.png");
+    background-size: cover; 
+    height: 150px; 
+    -webkit-box-shadow: none; 
+    box-shadow: none; 
+    border: 0px; 
+    border-radius: 0px; 
+}   
+.card.detail{
+    border: none !important;
+}
+
+.card-detail p , #mensaje-recomendacion{
+    font-family: KgTen;
+}
+
+.card-title{
+    font-family: Tiza;
+}
+.card hr{
+    border: #ffffff solid 2px;
+}
+
+.card-detail{
+    background-color: #212529;
+    color: #ffffff;
+}
+
+/*Pagination*/
+.pagination > li > a
+{
+    background-color: white;
+    color: #212529;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #212529;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.page-item.active .page-link
+{
+    color: white;
+    background-color: #212529;
+    border-color: #212529;
+    border: solid 1px #212529;
+}
+
+.pagination > li.active > a:hover
+{
+    background-color: #212529;
+    border-color: #212529;
+    border: solid 1px #212529;
 }

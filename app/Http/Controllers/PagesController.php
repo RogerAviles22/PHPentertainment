@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models;
 
 class PagesController extends Controller
 {
-    public function home(){
-        $entretenimientos = Models\Entretenimiento::paginate(4);
-        return view('welcome', compact('entretenimientos'));
+    public function home(Request $request){
+        $usuarioId = Auth::user()->id;
+
+        if($request){
+            $query = trim($request->get('search'));
+            $entretenimientos = Models\Entretenimiento::where('id_espectador', $usuarioId)
+                                                        ->where('nombre', 'LIKE', '%'.$query.'%')
+                                                        ->paginate(4);
+            return view('welcome', compact('entretenimientos','query'));
+        }
     }
 
     public function detalle($id){
@@ -59,7 +68,7 @@ class PagesController extends Controller
         $entretenimientoNuevo->descripcion = $request->descripcion;
         $entretenimientoNuevo->anio_estreno = $request->anio_estreno;
         $entretenimientoNuevo->id_categoria = $request->id_categoria;
-        $entretenimientoNuevo->id_espectador = 1;
+        $entretenimientoNuevo->id_espectador = Auth::user()->id;
         $entretenimientoNuevo -> save();
 
         $id_entretenimiento = $entretenimientoNuevo -> id_entretenimiento;

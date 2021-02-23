@@ -17,13 +17,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="icon" type="image/png" href="{{ asset('images/film_icon.png') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/detail.css') }}" />
     </head>
     <body>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/logo.png') }} " alt="Logo" class="img-fluid" width="200">
+                    <img src="{{ asset('images/logo.png') }} " alt="Logo" class="img-fluid" width="300">
                 </a>
                 <div class="d-flex" id="navbarText">
                     <ul class="nav navbar-nav me-auto mb-2 mb-lg-0 ">
@@ -33,13 +33,21 @@
                         <li class="nav-item ">
                             <a class="nav-link {{ Route::is('registro') ? 'active' : '' }}" href="{{ route('registro') }}">Registro</a>
                         </li>
+                        <li class="nav-item ">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                                        Cerrar sesión
+                                    </a>
+                                </form>
+                        </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>
-
+        
         <section class="container-fluid main">
             @yield('seccion')
         </section>

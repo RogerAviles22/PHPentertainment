@@ -11,7 +11,7 @@
                         <p class="text-end card-title">Toma #000{{$entretenimientos->id_entretenimiento}}</p>
                     </div>
                     <hr>
-                    <p class="col-8 fs-4">{{$entretenimientos->descripcion}}</p>  
+                    <p class="col-8 fs-5">{{$entretenimientos->descripcion}}</p>  
                     <div class="col-4 text-center">                        
                         <h4 >GÉNERO</h4>
                         @foreach ($generos as $item)
